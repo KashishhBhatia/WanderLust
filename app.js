@@ -23,7 +23,7 @@ const userRouter = require("./routes/user");
 
 // MongoDB URL
 const dbUrl = process.env.ATLAS_DB_URL;
-
+const PORT=process.env.PORT || 8080
 // Connect to MongoDB
 main().then(() => {
     console.log("Connected to DB");
@@ -104,6 +104,6 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log("Listening on port 8080");
 });
